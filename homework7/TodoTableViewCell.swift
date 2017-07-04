@@ -9,6 +9,8 @@
 import UIKit
 
 class TodoTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var toDoTaskLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

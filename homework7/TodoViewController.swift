@@ -9,9 +9,18 @@
 import UIKit
 
 class TodoViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var toDoTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.toDoTableView.dataSource = self as? UITableViewDataSource
+        self.toDoTableView.tableFooterView = UIView()
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -31,5 +40,10 @@ class TodoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+ extension TodoViewController: UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 
 }
