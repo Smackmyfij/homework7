@@ -2,7 +2,7 @@
 //  ShoppingTableViewCell.swift
 //  homework7
 //
-//  Created by user on 04.07.17.
+//  Created by user on 06.07.17.
 //  Copyright © 2017 fijirald. All rights reserved.
 //
 
@@ -10,6 +10,7 @@ import UIKit
 
 class ShoppingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var shoppingTaskLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +22,16 @@ class ShoppingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configureAnotherCellWith(name: String)
+    {
+        if name.characters.count > 25
+        {
+            shoppingTaskLabel.text = "Too long task"
+            
+        } else {
+            shoppingTaskLabel.text = name
+        }
+    }
+
+    
 }

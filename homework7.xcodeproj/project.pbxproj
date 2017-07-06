@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE117BF71F0E9821001B2A58 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE117BF61F0E9821001B2A58 /* ShoppingTableViewCell.swift */; };
+		CE117BF91F0E984C001B2A58 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE117BF81F0E984C001B2A58 /* ShoppingViewController.swift */; };
 		CE7284C41F0BFA6400D15D97 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7284C31F0BFA6400D15D97 /* Tasks.swift */; };
 		CE7284C61F0C07A800D15D97 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7284C51F0C07A800D15D97 /* TodoViewController.swift */; };
-		CE7284C81F0C07BE00D15D97 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7284C71F0C07BE00D15D97 /* ShoppingViewController.swift */; };
 		CE7284CB1F0C07E600D15D97 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7284CA1F0C07E600D15D97 /* TodoTableViewCell.swift */; };
-		CE7284CD1F0C07F300D15D97 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7284CC1F0C07F300D15D97 /* ShoppingTableViewCell.swift */; };
 		CE817EA51F0A9FB5005EFDA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE817EA41F0A9FB5005EFDA3 /* AppDelegate.swift */; };
 		CE817EA71F0A9FB5005EFDA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE817EA61F0A9FB5005EFDA3 /* ViewController.swift */; };
 		CE817EAA1F0A9FB5005EFDA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE817EA81F0A9FB5005EFDA3 /* Main.storyboard */; };
@@ -20,11 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE117BF61F0E9821001B2A58 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		CE117BF81F0E984C001B2A58 /* ShoppingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		CE7284C31F0BFA6400D15D97 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		CE7284C51F0C07A800D15D97 /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
-		CE7284C71F0C07BE00D15D97 /* ShoppingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		CE7284CA1F0C07E600D15D97 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
-		CE7284CC1F0C07F300D15D97 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		CE817EA11F0A9FB5005EFDA3 /* homework7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE817EA41F0A9FB5005EFDA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE817EA61F0A9FB5005EFDA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			children = (
 				CE7284C31F0BFA6400D15D97 /* Tasks.swift */,
 				CE7284C51F0C07A800D15D97 /* TodoViewController.swift */,
-				CE7284C71F0C07BE00D15D97 /* ShoppingViewController.swift */,
+				CE117BF81F0E984C001B2A58 /* ShoppingViewController.swift */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7284CA1F0C07E600D15D97 /* TodoTableViewCell.swift */,
-				CE7284CC1F0C07F300D15D97 /* ShoppingTableViewCell.swift */,
+				CE117BF61F0E9821001B2A58 /* ShoppingTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -168,12 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7284C61F0C07A800D15D97 /* TodoViewController.swift in Sources */,
+				CE117BF71F0E9821001B2A58 /* ShoppingTableViewCell.swift in Sources */,
+				CE117BF91F0E984C001B2A58 /* ShoppingViewController.swift in Sources */,
 				CE817EA71F0A9FB5005EFDA3 /* ViewController.swift in Sources */,
 				CE7284C41F0BFA6400D15D97 /* Tasks.swift in Sources */,
 				CE7284CB1F0C07E600D15D97 /* TodoTableViewCell.swift in Sources */,
 				CE817EA51F0A9FB5005EFDA3 /* AppDelegate.swift in Sources */,
-				CE7284CD1F0C07F300D15D97 /* ShoppingTableViewCell.swift in Sources */,
-				CE7284C81F0C07BE00D15D97 /* ShoppingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

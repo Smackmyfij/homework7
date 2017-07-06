@@ -13,7 +13,6 @@ class Task: NSObject {
     var taskName: [String] = []
     var taskImplementation: [Bool] = []
     
-    var toDoTask = ["Wash the car", "Take off the trash", "Do the homework", "Finish the homework"]
-    var shopingTask = ["Milk", "Sausages", "Some chiken meat", "Juice"]
+    
     
 }

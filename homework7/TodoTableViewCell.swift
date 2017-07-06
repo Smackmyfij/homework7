@@ -23,4 +23,15 @@ class TodoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configureCellWith(name: String)
+    {
+        if name.characters.count > 25
+        {
+            toDoTaskLabel.text = "Too long task"
+            
+        } else {
+            toDoTaskLabel.text = name
+        }
+    }
+    
 }
