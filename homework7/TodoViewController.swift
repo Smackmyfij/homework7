@@ -15,6 +15,13 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var toDoTableView: UITableView!
     
+    open func deleteRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation)
+    {
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,8 +36,21 @@ class TodoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+    
+    if editingStyle == .delete {
+    
+    self.toDoTask.remove(at: indexPath.row)
+    
+    self.toDoTableView.reloadData()
+    }
+    
+    }
     
     /*
      // MARK: - Navigation

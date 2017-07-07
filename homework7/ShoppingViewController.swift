@@ -10,6 +10,8 @@ import UIKit
 
 class ShoppingViewController: UIViewController
 {
+    
+    
     var shoppingTask = ["Milk", "Chocolate", "Apples", "Sausages"]
     
     @IBOutlet weak var shoppingTableView: UITableView!
@@ -31,6 +33,18 @@ class ShoppingViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+        
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        
+        if editingStyle == .delete {
+            
+            self.shoppingTask.remove(at: indexPath.row)
+            
+            self.shoppingTableView.reloadData()
+        }
+        
+    }
     
     /*
      // MARK: - Navigation
