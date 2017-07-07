@@ -10,6 +10,8 @@ import UIKit
 
 class TodoViewController: UIViewController {
     
+    @IBOutlet weak var ToDoTaskTextField: UITextField!
+    
     var toDoTask = ["Wash the car", "Take off the trash", "Do the homework", "Finish the homework"]
     
     
@@ -27,7 +29,7 @@ class TodoViewController: UIViewController {
         
         self.toDoTableView.dataSource = self
         self.toDoTableView.tableFooterView = UIView()
-        
+        ToDoTaskTextField.backgroundColor = UIColor.lightGray
         
         
         // Do any additional setup after loading the view.
@@ -40,16 +42,24 @@ class TodoViewController: UIViewController {
         
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
-    
-    if editingStyle == .delete {
-    
-    self.toDoTask.remove(at: indexPath.row)
-    
-    self.toDoTableView.reloadData()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        let text = ToDoTaskTextField.text
+        toDoTask.append(text!)
+        toDoTableView.reloadData()
+        return true
     }
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        
+        if editingStyle == .delete {
+            
+            self.toDoTask.remove(at: indexPath.row)
+            
+            self.toDoTableView.reloadData()
+        }
+        
     }
     
     /*

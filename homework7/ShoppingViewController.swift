@@ -11,6 +11,13 @@ import UIKit
 class ShoppingViewController: UIViewController
 {
     
+    @IBOutlet weak var shoppingTaskTextField: UITextField!
+    
+    @IBAction func addShopTaskButton(_ sender: Any) {
+        let text = shoppingTaskTextField.text
+        shoppingTask.append(text!)
+shoppingTableView.reloadData()
+    }
     
     var shoppingTask = ["Milk", "Chocolate", "Apples", "Sausages"]
     
@@ -22,7 +29,7 @@ class ShoppingViewController: UIViewController
         
         self.shoppingTableView.dataSource = self as? UITableViewDataSource
         self.shoppingTableView.tableFooterView = UIView()
-        
+        shoppingTaskTextField.backgroundColor = UIColor.lightGray
         
         // Do any additional setup after loading the view.
     }
@@ -33,6 +40,12 @@ class ShoppingViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        let text = shoppingTaskTextField.text
+        shoppingTask.append(text!)
+        shoppingTableView.reloadData()
+        return true
+    }
         
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
@@ -45,6 +58,8 @@ class ShoppingViewController: UIViewController
         }
         
     }
+    
+
     
     /*
      // MARK: - Navigation
