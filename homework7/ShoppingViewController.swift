@@ -10,16 +10,20 @@ import UIKit
 
 class ShoppingViewController: UIViewController
 {
+    var shoppingTask: Array<Any> = []
     
     @IBOutlet weak var shoppingTaskTextField: UITextField!
+    
     
     @IBAction func addShopTaskButton(_ sender: Any) {
         let text = shoppingTaskTextField.text
         shoppingTask.append(text!)
-shoppingTableView.reloadData()
+        shoppingTableView.reloadData()
+        UserDefaults.standard.set(shoppingTask, forKey: "SHOPPING_TASK_STORAGE")
+        
     }
     
-    var shoppingTask = ["Milk", "Chocolate", "Apples", "Sausages"]
+    
     
     @IBOutlet weak var shoppingTableView: UITableView!
     
@@ -30,6 +34,10 @@ shoppingTableView.reloadData()
         self.shoppingTableView.dataSource = self as? UITableViewDataSource
         self.shoppingTableView.tableFooterView = UIView()
         shoppingTaskTextField.backgroundColor = UIColor.lightGray
+        
+        let shoppingTasksFromUserDefalts = UserDefaults.standard.value(forKey: "SHOPPING_TASK_STORAGE")
+        
+        shoppingTask = shoppingTasksFromUserDefalts as! Array<Any>
         
         // Do any additional setup after loading the view.
     }
@@ -44,9 +52,10 @@ shoppingTableView.reloadData()
         let text = shoppingTaskTextField.text
         shoppingTask.append(text!)
         shoppingTableView.reloadData()
+        UserDefaults.standard.set(shoppingTask, forKey: "SHOPPING_TASK_STORAGE")
         return true
     }
-        
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         
@@ -59,7 +68,7 @@ shoppingTableView.reloadData()
         
     }
     
-
+    
     
     /*
      // MARK: - Navigation
@@ -87,7 +96,7 @@ extension ShoppingViewController: UITableViewDataSource
         
         if let myShoppingCell = shoppingCell as? ShoppingTableViewCell
         {
-            myShoppingCell.configureAnotherCellWith(name: shoppingTask[indexPath.row])
+            myShoppingCell.configureAnotherCellWith(name: (shoppingTask[indexPath.row] as!String))
         }
         return shoppingCell
     }

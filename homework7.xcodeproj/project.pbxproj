@@ -45,23 +45,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE7284C01F0BF9ED00D15D97 /* Tasks */ = {
+		CE7284C01F0BF9ED00D15D97 /* Shopping Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				CE7284C31F0BFA6400D15D97 /* Tasks.swift */,
-				CE7284C51F0C07A800D15D97 /* TodoViewController.swift */,
+				CE117BF61F0E9821001B2A58 /* ShoppingTableViewCell.swift */,
 				CE117BF81F0E984C001B2A58 /* ShoppingViewController.swift */,
 			);
-			name = Tasks;
+			name = "Shopping Tasks";
 			sourceTree = "<group>";
 		};
-		CE7284C91F0C07C800D15D97 /* Cells */ = {
+		CE7284C91F0C07C800D15D97 /* To Do Tasks */ = {
 			isa = PBXGroup;
 			children = (
 				CE7284CA1F0C07E600D15D97 /* TodoTableViewCell.swift */,
-				CE117BF61F0E9821001B2A58 /* ShoppingTableViewCell.swift */,
+				CE7284C51F0C07A800D15D97 /* TodoViewController.swift */,
 			);
-			name = Cells;
+			name = "To Do Tasks";
 			sourceTree = "<group>";
 		};
 		CE817E981F0A9FB5005EFDA3 = {
@@ -83,8 +82,9 @@
 		CE817EA31F0A9FB5005EFDA3 /* homework7 */ = {
 			isa = PBXGroup;
 			children = (
-				CE7284C91F0C07C800D15D97 /* Cells */,
-				CE7284C01F0BF9ED00D15D97 /* Tasks */,
+				CE7284C31F0BFA6400D15D97 /* Tasks.swift */,
+				CE7284C91F0C07C800D15D97 /* To Do Tasks */,
+				CE7284C01F0BF9ED00D15D97 /* Shopping Tasks */,
 				CE817EA41F0A9FB5005EFDA3 /* AppDelegate.swift */,
 				CE817EA61F0A9FB5005EFDA3 /* ViewController.swift */,
 				CE817EA81F0A9FB5005EFDA3 /* Main.storyboard */,

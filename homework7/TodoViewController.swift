@@ -12,16 +12,21 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var ToDoTaskTextField: UITextField!
     
-    var toDoTask = ["Wash the car", "Take off the trash", "Do the homework", "Finish the homework"]
+    var toDoTask: Array<Any> = []
     
     
     @IBOutlet weak var toDoTableView: UITableView!
     
-    open func deleteRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation)
+    
+    
+    @IBAction func addToDoTaskButton(_ sender: Any)
     {
+        let text = ToDoTaskTextField.text
+        toDoTask.append(text!)
+        toDoTableView.reloadData()
+        UserDefaults.standard.set(toDoTask, forKey: "TODO_TASKS_STORAGE")
         
     }
-    
     
     
     override func viewDidLoad() {
@@ -31,9 +36,16 @@ class TodoViewController: UIViewController {
         self.toDoTableView.tableFooterView = UIView()
         ToDoTaskTextField.backgroundColor = UIColor.lightGray
         
+        let toDoTaskFromUserDefaults = UserDefaults.standard.value(forKey: "TODO_TASKS_STORAGE")
+        
+        toDoTask = toDoTaskFromUserDefaults as! Array<Any>
+        
+        
         
         // Do any additional setup after loading the view.
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,11 +54,15 @@ class TodoViewController: UIViewController {
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
         let text = ToDoTaskTextField.text
         toDoTask.append(text!)
         toDoTableView.reloadData()
+        UserDefaults.standard.set(toDoTask, forKey: "TODO_TASKS_STORAGE")
+        
         return true
+        
     }
     
     
@@ -62,6 +78,7 @@ class TodoViewController: UIViewController {
         
     }
     
+    
     /*
      // MARK: - Navigation
      
@@ -73,7 +90,6 @@ class TodoViewController: UIViewController {
      */
     
 }
-
 extension TodoViewController: UITableViewDataSource
 {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -88,7 +104,7 @@ extension TodoViewController: UITableViewDataSource
         
         if let myToDoCell = toDoCell as? TodoTableViewCell
         {
-            myToDoCell.configureCellWith(name: toDoTask[indexPath.row])
+            myToDoCell.configureCellWith(name: toDoTask[indexPath.row] as! String)
         }
         return toDoCell
     }

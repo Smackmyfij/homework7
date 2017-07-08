@@ -24,7 +24,7 @@ class ShoppingTableViewCell: UITableViewCell {
 
     func configureAnotherCellWith(name: String)
     {
-        if name.characters.count > 25
+        if name.characters.count > 60
         {
             shoppingTaskLabel.text = "Too long task"
             
