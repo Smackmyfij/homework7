@@ -14,31 +14,23 @@ class ShoppingViewController: UIViewController
     
     @IBOutlet weak var shoppingTaskTextField: UITextField!
     
-    
     @IBAction func addShopTaskButton(_ sender: Any) {
         let text = shoppingTaskTextField.text
         shoppingTask.append(text!)
         shoppingTableView.reloadData()
         UserDefaults.standard.set(shoppingTask, forKey: "SHOPPING_TASK_STORAGE")
-        
     }
-    
-    
     
     @IBOutlet weak var shoppingTableView: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         self.shoppingTableView.dataSource = self as? UITableViewDataSource
         self.shoppingTableView.tableFooterView = UIView()
         shoppingTaskTextField.backgroundColor = UIColor.lightGray
-        
         let shoppingTasksFromUserDefalts = UserDefaults.standard.value(forKey: "SHOPPING_TASK_STORAGE")
-        
         shoppingTask = shoppingTasksFromUserDefalts as! Array<Any>
-        
         // Do any additional setup after loading the view.
     }
     
@@ -58,18 +50,11 @@ class ShoppingViewController: UIViewController
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        
         if editingStyle == .delete {
-            
             self.shoppingTask.remove(at: indexPath.row)
-            
             self.shoppingTableView.reloadData()
         }
-        
     }
-    
-    
-    
     /*
      // MARK: - Navigation
      
@@ -79,7 +64,6 @@ class ShoppingViewController: UIViewController
      // Pass the selected object to the new view controller.
      }
      */
-    
 }
 
 extension ShoppingViewController: UITableViewDataSource
@@ -87,7 +71,6 @@ extension ShoppingViewController: UITableViewDataSource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return shoppingTask.count
-        
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
