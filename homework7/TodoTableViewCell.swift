@@ -11,18 +11,32 @@ import UIKit
 class TodoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var toDoTaskLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+       
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        if selected
+        {
+            toDoTaskLabel.text = "Done!"
+        }
+        
+        if toDoTaskLabel.text == "Done!"
+        {
+            self.backgroundColor = UIColor.green
 
+        }
+        
+        
         // Configure the view for the selected state
     }
-
+    
     func configureCellWith(name: String)
     {
         if name.characters.count > 60
@@ -31,6 +45,7 @@ class TodoTableViewCell: UITableViewCell {
             
         } else {
             toDoTaskLabel.text = name
+            
         }
     }
     

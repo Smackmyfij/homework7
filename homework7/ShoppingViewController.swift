@@ -53,6 +53,8 @@ class ShoppingViewController: UIViewController
         if editingStyle == .delete {
             self.shoppingTask.remove(at: indexPath.row)
             self.shoppingTableView.reloadData()
+            UserDefaults.standard.set(shoppingTask, forKey: "SHOPPING_TASK_STORAGE")
+
         }
     }
     /*

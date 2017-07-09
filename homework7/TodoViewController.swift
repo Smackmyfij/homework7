@@ -32,6 +32,8 @@ class TodoViewController: UIViewController {
         let toDoTaskFromUserDefaults = UserDefaults.standard.value(forKey: "TODO_TASKS_STORAGE")
         toDoTask = toDoTaskFromUserDefaults as! Array<Any>
         
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -55,6 +57,8 @@ class TodoViewController: UIViewController {
         if editingStyle == .delete {
             self.toDoTask.remove(at: indexPath.row)
             self.toDoTableView.reloadData()
+            UserDefaults.standard.set(toDoTask, forKey: "TODO_TASKS_STORAGE")
+
         }
     }
     /*
